@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-browny: rgba(74, 44, 10, 0.5);
+  --color-browny2: rgba(74, 44, 10, 0.3);
+}
