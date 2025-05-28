@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: 'https://im-uisoon.github.io/kitget/'
+  base: 'https://im-uisoon.github.io/kitget/',
   plugins: [vue(), vueDevTools(), tailwindcss()],
   resolve: {
     alias: {
