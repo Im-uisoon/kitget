@@ -12,6 +12,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  base: '/https://Im-uisoon.github.io/kitget/'
-})
+  base: '/https://im-uisoon.github.io/kitget/'})
 
