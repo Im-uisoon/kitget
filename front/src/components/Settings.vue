@@ -4,7 +4,7 @@ import axios from 'axios'
 import Header from './view/Header.vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
-const API_BASE = 'tender-hally-imuisoon-0eaa6cd0.koyeb.app/api'
+const API_BASE = 'https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api'
 
 /********************* 1. 기존 비밀번호 확인 *********************/
 const isVerifying = ref(false)

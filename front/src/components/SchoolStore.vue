@@ -16,7 +16,7 @@ const registerProduct = async () => {
   errorMsg.value = ''
   try {
     await axios.post(
-      'tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/product/register',
+      'https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/product/register',
       {
         className: className.value,
         productName: productName.value,

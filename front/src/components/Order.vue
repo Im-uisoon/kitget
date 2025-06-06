@@ -7,7 +7,7 @@ const orders = ref([])
 
 onMounted(async () => {
   try {
-    const response = await axios.get('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/orders', {
+    const response = await axios.get('https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/orders', {
       withCredentials: true,
     })
     orders.value = response.data
@@ -40,7 +40,7 @@ function formatOrderDate(dateStr) {
 async function cancelOrder(orderId) {
   if (!confirm('정말 주문을 취소하시겠습니까?')) return
   try {
-    await axios.delete(`tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/orders/${orderId}`, {
+    await axios.delete(`https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/orders/${orderId}`, {
       withCredentials: true,
     })
     alert('주문이 취소되었습니다.')

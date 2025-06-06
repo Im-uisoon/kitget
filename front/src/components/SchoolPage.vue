@@ -25,7 +25,7 @@ const pickupPlaces = {
 const classes = ref([])
 const fetchClasses = async () => {
   try {
-    const response = await axios.get(`tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/${schoolCode}/classes`)
+    const response = await axios.get(`https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/${schoolCode}/classes`)
     classes.value = response.data
   } catch (error) {
     console.error(error)
@@ -44,7 +44,7 @@ watch(selectedClass, (newClass) => {
 const items = ref([])
 const fetchItems = async (className) => {
   try {
-    const response = await axios.get(`tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/${schoolCode}/${className}/items`)
+    const response = await axios.get(`https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/${schoolCode}/${className}/items`)
     const uniqueItems = []
     const seen = new Set()
     for (const item of response.data) {
@@ -104,7 +104,7 @@ const submitOrder = async () => {
     })),
   }
   try {
-    await axios.post('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/order', orderData, {
+    await axios.post('https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/order', orderData, {
       withCredentials: true,
     })
     alert('주문이 완료되었습니다!')

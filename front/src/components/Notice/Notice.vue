@@ -14,7 +14,7 @@ const userEmail = ref(null)
 // 내 정보 불러오기
 const fetchMyInfo = async () => {
   try {
-    const res = await axios.get('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/me', { withCredentials: true })
+    const res = await axios.get('https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/me', { withCredentials: true })
     userAuth.value = res.data.auth
     userEmail.value = res.data.email
   } catch (e) {
@@ -24,7 +24,7 @@ const fetchMyInfo = async () => {
 }
 
 const fetchNotices = async () => {
-  const res = await axios.get(`tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/notice?page=${page.value}`, { withCredentials: true })
+  const res = await axios.get(`https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/notice?page=${page.value}`, { withCredentials: true })
   notices.value = res.data.content
   totalPages.value = res.data.totalPages
 }

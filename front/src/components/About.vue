@@ -10,14 +10,14 @@ const userAuth = ref(null)
 
 // 신원 조회
 onMounted(async () => {
-  const res = await axios.get('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/me', { withCredentials: true })
+  const res = await axios.get('https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/me', { withCredentials: true })
   userAuth.value = res.data.auth
 })
 
 // 교사:교재등록(학교 조회 및 개별 링크)
 const goToShop = async () => {
   try {
-    const response = await axios.get('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/user/school', { withCredentials: true })
+    const response = await axios.get('https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/user/school', { withCredentials: true })
     const schoolCode = response.data.school
     if (schoolCode) {
       router.push(`/school/${schoolCode}`)
@@ -33,7 +33,7 @@ const goToShop = async () => {
 // 교사:등록하기(학교 조회 및 개별 링크)
 const goToStore = async () => {
   try {
-    const response = await axios.get('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/user/school', { withCredentials: true })
+    const response = await axios.get('https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/user/school', { withCredentials: true })
     const schoolCode = response.data.school
     if (schoolCode) {
       router.push(`/store/${schoolCode}`)

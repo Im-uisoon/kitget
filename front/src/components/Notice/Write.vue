@@ -15,7 +15,7 @@ const submit = async () => {
   error.value = ''
   if (!isEnabled.value) return
   try {
-    await axios.post('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/notice', { title: title.value, content: content.value }, { withCredentials: true })
+    await axios.post('https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/notice', { title: title.value, content: content.value }, { withCredentials: true })
     router.push('/notice')
   } catch (e) {
     error.value = '글 등록에 실패했습니다. (권한이 없거나 세션이 만료되었습니다)'

@@ -9,7 +9,7 @@ const email = ref(null)
 
 const checkAuth = async () => {
   try {
-    const response = await axios.get('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/check', { withCredentials: true })
+    const response = await axios.get('https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/check', { withCredentials: true })
     login.value = response.data.isAuthenticated
     email.value = response.data.email
     if (!login.value) {
@@ -24,7 +24,7 @@ const checkAuth = async () => {
 
 const logout = async () => {
   try {
-    await axios.post('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/logout', {}, { withCredentials: true })
+    await axios.post('https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/logout', {}, { withCredentials: true })
     login.value = false
     email.value = null
     router.push('/')

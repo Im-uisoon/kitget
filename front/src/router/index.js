@@ -65,7 +65,7 @@ router.beforeEach(async (to, from, next) => {
   if (to.name === 'SchoolPage') {
     try {
       const schoolCode = to.params.schoolCode
-      const response = await axios.get(`tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/school/${schoolCode}`, { withCredentials: true })
+      const response = await axios.get(`https://tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/school/${schoolCode}`, { withCredentials: true })
       if (response.data.isAccess) {
         next()
       } else {
