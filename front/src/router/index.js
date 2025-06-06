@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import axios from 'axios'
 import Home from '../components/Home.vue'
 import SchoolPage from '../components/SchoolPage.vue'
@@ -6,7 +6,7 @@ import SchoolStore from '@/components/SchoolStore.vue'
 import Content from '@/components/Notice/Content.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
