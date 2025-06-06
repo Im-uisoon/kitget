@@ -45,7 +45,7 @@ const submitVerification = async () => {
 
   // 학교, 신분, 이름, 학번 일치 확인
   try {
-    const response = await axios.post('http://localhost:8080/api/verify', {
+    const response = await axios.post('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/verify', {
       school: selectedSchool.value,
       name: name.value,
       code: code.value,
@@ -82,7 +82,7 @@ const submitSignUp = async (event) => {
 
   // 가입정보 백엔드 전송
   try {
-    const response = await axios.post('http://localhost:8080/api/signup', {
+    const response = await axios.post('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/signup', {
       email: email.value,
       password: password.value,
       school: selectedSchool.value,
@@ -114,7 +114,7 @@ const submitLogin = async (event) => {
   // 회원 검토 백엔드 전송
   try {
     const response = await axios.post(
-      'http://localhost:8080/api/login',
+      'tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/login',
       {
         email: email.value,
         password: password.value,
@@ -134,7 +134,7 @@ const submitLogin = async (event) => {
 /********************************* 4. 로그아웃 ***************************************/
 const submitLogout = async () => {
   try {
-    const response = await axios.post('http://localhost:8080/api/logout', {}, { withCredentials: true })
+    const response = await axios.post('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/logout', {}, { withCredentials: true })
     isLoggedIn.value = false
     errorMessage.value = '로그아웃 되었습니다'
     // 로그아웃하면 다시 로그인 화면 이동

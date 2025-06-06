@@ -6,7 +6,7 @@ import Header from './view/Header.vue'
 /********************************* 1. todo 로딩 ***************************************/
 const todos = ref([])
 const fetchTodos = async () => {
-  const res = await axios.get('http://localhost:8080/api/todo', { withCredentials: true })
+  const res = await axios.get('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/todo', { withCredentials: true })
   todos.value = res.data
 }
 
@@ -14,20 +14,20 @@ const fetchTodos = async () => {
 const newTodo = ref('')
 const addTodo = async () => {
   if (!newTodo.value.trim()) return
-  await axios.post('http://localhost:8080/api/todo', { content: newTodo.value }, { withCredentials: true })
+  await axios.post('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/todo', { content: newTodo.value }, { withCredentials: true })
   newTodo.value = ''
   fetchTodos()
 }
 
 /********************************* 3. todo 삭제 ***************************************/
 const deleteTodo = async (id) => {
-  await axios.delete(`http://localhost:8080/api/todo/${id}`, { withCredentials: true })
+  await axios.delete(`tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/todo/${id}`, { withCredentials: true })
   fetchTodos()
 }
 
 /********************************* 4. todo 체크 ***************************************/
 const toggleCompleted = async (todo) => {
-  await axios.patch(`http://localhost:8080/api/todo/${todo.id}/completed`, { completed: !todo.completed }, { withCredentials: true })
+  await axios.patch(`tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/todo/${todo.id}/completed`, { completed: !todo.completed }, { withCredentials: true })
   fetchTodos()
 }
 

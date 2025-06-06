@@ -16,7 +16,7 @@ const registerProduct = async () => {
   errorMsg.value = ''
   try {
     await axios.post(
-      'http://localhost:8080/api/product/register',
+      'tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/product/register',
       {
         className: className.value,
         productName: productName.value,

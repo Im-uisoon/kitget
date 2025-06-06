@@ -12,7 +12,7 @@ const userEmail = ref(null)
 
 const fetchMyInfo = async () => {
   try {
-    const res = await axios.get('http://localhost:8080/api/me', { withCredentials: true })
+    const res = await axios.get('tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/me', { withCredentials: true })
     userAuth.value = res.data.auth
     userEmail.value = res.data.email
   } catch (e) {
@@ -23,13 +23,13 @@ const fetchMyInfo = async () => {
 
 onMounted(async () => {
   await fetchMyInfo()
-  const res = await axios.get(`http://localhost:8080/api/notice/${route.params.id}`, { withCredentials: true })
+  const res = await axios.get(`tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/notice/${route.params.id}`, { withCredentials: true })
   notice.value = res.data
 })
 
 const deleteNotice = async () => {
   if (confirm('정말 삭제하시겠습니까?')) {
-    await axios.delete(`http://localhost:8080/api/notice/${notice.value.id}`, { withCredentials: true })
+    await axios.delete(`tender-hally-imuisoon-0eaa6cd0.koyeb.app/api/notice/${notice.value.id}`, { withCredentials: true })
     router.push('/notice')
   }
 }
